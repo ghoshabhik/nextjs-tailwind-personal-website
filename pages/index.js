@@ -7,9 +7,7 @@ import { sortByDate } from '../utils'
 import Head from 'next/head'
 import { useState } from 'react'
 
-
-
-export default function Home({ posts }) {
+const Home = ({ posts }) => {
 
   const [tag, setTag] = useState("Recent")
   const [filteredPosts, setFilteredPosts] = useState(posts.slice(0,3))
@@ -70,6 +68,7 @@ export default function Home({ posts }) {
   )
 }
 
+export default  Home
 
 export async function getStaticProps() {
   // Get files from the posts dir

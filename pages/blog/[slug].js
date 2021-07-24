@@ -4,13 +4,12 @@ import matter from 'gray-matter'
 import marked from 'marked'
 import Link from 'next/link'
 import ViewCounter from '../../components/ViewCounter'
+import Image from 'next/image'
 
-export default function PostPage({
-  
-  frontmatter: { title, date, cover_image, word_count },
+const PostPage = ({frontmatter: { title, date, cover_image, word_count },
   slug,
   content,
-  }) {
+  }) => {
 
 
   return (
@@ -26,7 +25,9 @@ export default function PostPage({
             </div>
         </div>
         <div className="flex justify-center my-2">
-        <img src={cover_image} alt='' className="w-11/12 lg:w-3/4 h-full items-center rounded-xl"/>
+        <Image src={cover_image} alt='Cover Photo' 
+        width={800} 
+        height={400} className="w-11/12 lg:w-3/4 h-full items-center rounded-xl"/>
         </div>
         <div className="lg:w-3/4 mx-auto px-3 my-5">
           <div dangerouslySetInnerHTML={{ __html: marked(content) }} className="prose dark:prose-dark"></div>
@@ -41,6 +42,8 @@ export default function PostPage({
     </>
   )
 }
+
+export default PostPage
 
 export async function getStaticPaths() {
   const files = fs.readdirSync(path.join('posts'))
