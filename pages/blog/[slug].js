@@ -6,6 +6,7 @@ import matter from 'gray-matter'
 import marked from 'marked'
 import Link from 'next/link'
 import ViewCounter from '../../components/ViewCounter'
+import Comments from '../../components/Comments'
 import Image from 'next/image'
 
 const PostPage = ({frontmatter: { title, date, cover_image, word_count },
@@ -35,6 +36,7 @@ const PostPage = ({frontmatter: { title, date, cover_image, word_count },
           <div dangerouslySetInnerHTML={{ __html: marked(content) }} className="prose dark:prose-dark"></div>
         </div>
         <hr />
+        <Comments />
         <div className="text-center my-10 ">
         <Link href='/blogs'>
         <a className="text-center bg-gray-800 border rounded-md text-gray-300 px-3">See all other articles</a>
