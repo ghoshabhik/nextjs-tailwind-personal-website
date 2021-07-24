@@ -2,8 +2,8 @@ const tailwindcss = require("tailwindcss");
 
 module.exports = {
   darkMode: 'class',
-  purge: [],
-  // purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  // purge: [],
+  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
