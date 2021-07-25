@@ -20,7 +20,7 @@ const PostPage = ({frontmatter: { title, date, cover_image, word_count },
       
       <div className="lg:w-3/6 mx-auto">
         <div className="flex flex-col items-center my-5">
-            <h1 className="mb-3 text-5xl font-semibold text-center">{title}</h1>
+            <h1 className="mb-3 text-4xl font-semibold text-center">{title}</h1>
             <div className="">
               <span className="bg-gray-500 dark:bg-gray-400 text-sm rounded-md px-2 text-gray-200 dark:text-gray-600 mx-1">{date}</span>
               <span className="bg-gray-500 dark:bg-gray-400 text-sm rounded-md px-2 text-gray-200 dark:text-gray-600 mx-1">{word_count} words</span>
